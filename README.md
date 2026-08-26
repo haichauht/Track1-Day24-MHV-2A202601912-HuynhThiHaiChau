@@ -52,6 +52,15 @@ Tôi kiểm tra lại theo đúng thứ tự của Tab 2, không nhìn mỗi ô 
 
 Vì cả hai điều kiện vàng đều đạt, cột Base trả về **`HEALTHY`**. Tôi giữ nguyên giả định thay vì tiếp tục tăng ARPU hoặc giảm CAC chỉ để chỉ số đẹp hơn.
 
+## Kiểm chứng ROI và Stress-test — Tab 3
+
+Tôi chạy Tab 3 theo hai bước, không dùng chung một kết quả cho cả hai kịch bản:
+
+- **Base:** NPV đạt **+6,382 tỷ đồng**, IRR năm **115,2%** và project payback ở **tháng 18**. Cả ba điều kiện NPV dương, IRR trên 20% và hoàn vốn trước tháng 24 đều đạt; kết luận của mô hình là `GO`.
+- **Pessimistic:** tiền mặt cuối tháng 12 còn khoảng **1,414 tỷ đồng**, cuối tháng 14 còn khoảng **401 triệu đồng** và bắt đầu âm ở tháng 15. Vì doanh nghiệp sống hết 14 tháng trước khi tiền mặt xuống dưới 0, runway của kịch bản này là **14 tháng**, cao hơn ngưỡng 12 tháng.
+
+Kịch bản Pessimistic có NPV âm và kết luận `NO-GO`; đây là tín hiệu stress-test cần giữ nguyên, không phải lỗi công thức. Gate 3 chỉ yêu cầu Base đáng đầu tư và Pessimistic đủ tiền để xử lý biến cố ít nhất 12 tháng. File được lưu với ô chọn scenario ở `Pessimistic`, đúng trạng thái cuối sau khi thực hiện hai bước kiểm tra.
+
 ## Decision Note
 
 Tôi không thu tiền trực tiếp từ người đặt lịch lái thử. Showroom hoặc đại lý là bên trả phí, còn khách mua xe dùng ViVi miễn phí. Gói Base gồm 9 triệu đồng phí nền tảng mỗi tháng và khoảng 1,5 triệu đồng usage, nên ARPU là 10,5 triệu đồng/showroom/tháng. Tôi chọn cách thu hybrid vì showroom dễ dự toán phần phí cố định, còn phần usage giúp nhóm không phải gánh toàn bộ chi phí khi số cuộc hội thoại tăng mạnh.
