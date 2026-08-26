@@ -6,3 +6,6 @@
 Thumbs.db
 node_modules/
 tmp/
+
+# Legacy local filename kept only while the workbook is open in Excel.
+2A202601912_HuynhThiHaiChau_Day24.xlsx

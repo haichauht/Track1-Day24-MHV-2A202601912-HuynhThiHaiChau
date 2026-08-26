@@ -14,7 +14,7 @@
 
 ## File nộp bài
 
-[Mở file Excel tài chính hoàn chỉnh](2A202601912_HuynhThiHaiChau_Day24.xlsx)
+[Mở file Excel tài chính hoàn chỉnh](HuynhThiHaiChau_Day24.xlsx)
 
 Workbook giữ đúng ba tab của template:
 
@@ -76,11 +76,11 @@ Ngoài API 1,5 triệu và hạ tầng 1,2 triệu đồng/showroom/tháng, tôi
 - [Bessemer — CLTV/CAC từ 3x và CAC payback theo phân khúc](https://www.bvp.com/assets/uploads/2021/09/scaling-to-100-million-by-mary-d-onofrio.pdf)
 - [a16z — AI businesses có cloud, data labeling và human-in-the-loop costs](https://a16z.com/the-new-business-of-ai-and-how-its-different-from-traditional-software/)
 - [OpenAI API Pricing](https://platform.openai.com/pricing)
-- `Day24-AI-Product-Handbook.pdf` trong repository.
+- [Handbook và template Day 24 từ repository tài nguyên chính thức](https://github.com/VinUni-AI20k/Day24-Track1-AI-Product-Financial-Model-Lab).
 
 ## Tự kiểm trước khi nộp
 
-- [x] File Excel đúng tên `2A202601912_HuynhThiHaiChau_Day24.xlsx`.
+- [x] File Excel đúng tên `HuynhThiHaiChau_Day24.xlsx`.
 - [x] Tất cả ô màu vàng ở Tab 1 đã có dữ liệu cho ba kịch bản.
 - [x] Adoption của ba kịch bản nằm trong dải 0,1%–0,5%/tháng; TAM là 10.000 khách hàng.
 - [x] AI hidden costs lớn hơn 30% API cost.
