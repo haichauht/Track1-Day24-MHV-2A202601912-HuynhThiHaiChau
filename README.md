@@ -39,6 +39,19 @@ Workbook giữ đúng ba tab của template:
 - **Pessimistic:** Churn và CAC đều bằng **1,5x Base**; runway còn **14 tháng**.
 - **AI hidden costs Base:** 1,3 triệu/showroom/tháng, bằng **86,7% API cost**.
 
+## Kiểm chứng Unit Economics — Base
+
+Tôi kiểm tra lại theo đúng thứ tự của Tab 2, không nhìn mỗi ô `HEALTHY`:
+
+- Gross profit mỗi showroom mỗi tháng: `10,5 - 4,0 = 6,5 triệu đồng`.
+- Gross margin: `6,5 / 10,5 = 61,9%`, cao hơn ngưỡng an toàn 50%–60%.
+- Thời gian ở lại trung bình: `1 / 3% = 33,3 tháng`.
+- LTV: `6,5 × 33,3 = 216,67 triệu đồng`. Phép tính dùng gross profit sau COGS, không dùng revenue thô.
+- LTV/CAC: `216,67 / 45 = 4,81x`, lớn hơn 3,0x.
+- CAC payback: `45 / 6,5 = 6,92 tháng`, thấp hơn 12 tháng.
+
+Vì cả hai điều kiện vàng đều đạt, cột Base trả về **`HEALTHY`**. Tôi giữ nguyên giả định thay vì tiếp tục tăng ARPU hoặc giảm CAC chỉ để chỉ số đẹp hơn.
+
 ## Decision Note
 
 Tôi không thu tiền trực tiếp từ người đặt lịch lái thử. Showroom hoặc đại lý là bên trả phí, còn khách mua xe dùng ViVi miễn phí. Gói Base gồm 9 triệu đồng phí nền tảng mỗi tháng và khoảng 1,5 triệu đồng usage, nên ARPU là 10,5 triệu đồng/showroom/tháng. Tôi chọn cách thu hybrid vì showroom dễ dự toán phần phí cố định, còn phần usage giúp nhóm không phải gánh toàn bộ chi phí khi số cuộc hội thoại tăng mạnh.
