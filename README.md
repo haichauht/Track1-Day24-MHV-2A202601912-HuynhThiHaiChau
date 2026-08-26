@@ -1,13 +1,16 @@
 # Track 1 - Day 24 — AI Product Financial Model & Unit Economics
 
-## Thông tin bài làm
+## Thông tin học viên
 
 - **Họ và tên:** Huỳnh Thị Hải Châu
 - **Mã học viên:** 2A202601912
-- **Dự án nhóm Day 16–17:** P-053 — ViVi AI Agent
-- **Use case:** ViVi hỗ trợ khách chọn xe và đặt lịch lái thử VinFast
-- **Đơn vị khách hàng trong mô hình:** Một showroom/đại lý sử dụng ViVi
-- **Mô hình doanh thu:** Hybrid B2B — phí nền tảng hằng tháng cộng phí usage
+
+## 00 — Mô hình Kinh doanh
+
+1. **Dự án:** P-053 — ViVi AI Agent, tập trung vào use case hỗ trợ khách chọn xe và đặt lịch lái thử VinFast.
+2. **Target Customer / Persona:** Showroom hoặc đại lý VinFast là bên trả tiền; khách đang cân nhắc mua xe và muốn đặt lịch lái thử là người dùng trực tiếp.
+3. **Revenue Model:** Hybrid B2B — phí nền tảng hằng tháng cộng phí theo usage. Ở kịch bản Base, mô hình dùng mức phí nền tảng 9 triệu đồng/showroom/tháng và usage trung bình 1,5 triệu đồng, tương đương ARPU 10,5 triệu đồng/tháng.
+4. **TAM:** 500 showroom/đại lý. Đây là số làm tròn để lập kế hoạch, dựa trên mốc 394 showroom VinFast trên toàn cầu tại ngày 30/06/2025 trong [báo cáo kết quả kinh doanh quý II/2025 của VinFast](https://vinfastauto.com/vn_en/vinfast-reports-unaudited-second-quarter-2025-financial-results), đồng thời tính thêm dư địa mở rộng mạng lưới.
 
 ## File nộp bài
 
