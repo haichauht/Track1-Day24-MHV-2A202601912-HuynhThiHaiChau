@@ -8,9 +8,9 @@
 ## 00 — Mô hình Kinh doanh
 
 1. **Dự án:** P-053 — ViVi AI Agent, tập trung vào use case hỗ trợ khách chọn xe và đặt lịch lái thử VinFast.
-2. **Target Customer / Persona:** Showroom hoặc đại lý VinFast là bên trả tiền; khách đang cân nhắc mua xe và muốn đặt lịch lái thử là người dùng trực tiếp.
+2. **Target Customer / Persona:** Showroom hoặc đại lý ô tô là bên trả tiền, bắt đầu từ mạng lưới VinFast; khách đang cân nhắc mua xe và muốn đặt lịch lái thử là người dùng trực tiếp.
 3. **Revenue Model:** Hybrid B2B — phí nền tảng hằng tháng cộng phí theo usage. Ở kịch bản Base, mô hình dùng mức phí nền tảng 9 triệu đồng/showroom/tháng và usage trung bình 1,5 triệu đồng, tương đương ARPU 10,5 triệu đồng/tháng.
-4. **TAM:** 500 showroom/đại lý. Đây là số làm tròn để lập kế hoạch, dựa trên mốc 394 showroom VinFast trên toàn cầu tại ngày 30/06/2025 trong [báo cáo kết quả kinh doanh quý II/2025 của VinFast](https://vinfastauto.com/vn_en/vinfast-reports-unaudited-second-quarter-2025-financial-results), đồng thời tính thêm dư địa mở rộng mạng lưới.
+4. **TAM:** 10.000 điểm bán ô tô tại Đông Nam Á. Đây là planning assumption ở cận dưới của dải TAM trong brief Day 24, không phải số liệu đã kiểm toán. Mốc 394 showroom VinFast trên toàn cầu tại ngày 30/06/2025 trong [báo cáo kết quả kinh doanh quý II/2025 của VinFast](https://vinfastauto.com/vn_en/vinfast-reports-unaudited-second-quarter-2025-financial-results) được dùng làm beachhead ban đầu, không đại diện cho toàn bộ TAM.
 
 ## File nộp bài
 
@@ -27,23 +27,25 @@ Workbook giữ đúng ba tab của template:
 | Chỉ số | Optimistic | Base | Pessimistic |
 |---|---:|---:|---:|
 | ARPU/tháng | 12,0 triệu | 10,5 triệu | 8,0 triệu |
+| Adoption/tháng | 0,5% | 0,3% | 0,1% |
+| TAM | 10.000 | 10.000 | 10.000 |
 | Gross Margin | 70,8% | 61,9% | 37,5% |
 | LTV/CAC | 10,63x | **4,81x** | 0,99x |
 | CAC Payback | 4,7 tháng | **6,9 tháng** | 22,5 tháng |
 | Churn/tháng | 2,0% | 3,0% | **4,5%** |
 | CAC | 40,0 triệu | 45,0 triệu | **67,5 triệu** |
 
-- **Base:** NPV khoảng **+1,394 tỷ VND**, IRR **53,9%**, project payback **21 tháng**.
-- **Pessimistic:** Churn và CAC đều bằng **1,5x Base**; runway còn **12 tháng**.
+- **Base:** NPV khoảng **+6,382 tỷ VND**, IRR **115,2%**, project payback **18 tháng**.
+- **Pessimistic:** Churn và CAC đều bằng **1,5x Base**; runway còn **14 tháng**.
 - **AI hidden costs Base:** 1,3 triệu/showroom/tháng, bằng **86,7% API cost**.
 
 ## Decision Note
 
-Trong mô hình này, tôi không thu phí trực tiếp từ người đặt lịch lái thử. Khách hàng trả tiền là showroom hoặc đại lý, còn người dùng cuối vẫn sử dụng ViVi miễn phí. Tôi chọn hybrid pricing gồm 9 triệu đồng phí nền tảng mỗi tháng và phần usage trung bình 1,5 triệu đồng, nên ARPU Base là 10,5 triệu đồng/showroom/tháng. Cách thu này giúp doanh thu có phần cố định nhưng vẫn bảo vệ biên lợi nhuận khi một địa điểm có lượng hội thoại và booking tăng mạnh.
+Tôi không thu tiền trực tiếp từ người đặt lịch lái thử. Showroom hoặc đại lý là bên trả phí, còn khách mua xe dùng ViVi miễn phí. Gói Base gồm 9 triệu đồng phí nền tảng mỗi tháng và khoảng 1,5 triệu đồng usage, nên ARPU là 10,5 triệu đồng/showroom/tháng. Tôi chọn cách thu hybrid vì showroom dễ dự toán phần phí cố định, còn phần usage giúp nhóm không phải gánh toàn bộ chi phí khi số cuộc hội thoại tăng mạnh.
 
-TAM 500 địa điểm là mức planning làm tròn, neo theo báo cáo VinFast có 394 showroom toàn cầu vào ngày 30/06/2025 và khả năng mở rộng mạng lưới. CAC Base 45 triệu đồng phản ánh cách bán B2B có mục tiêu qua hệ thống đại lý hiện hữu, gồm demo, tích hợp và hỗ trợ ban đầu. Với gross margin 61,9%, LTV/CAC đạt 4,81x và CAC payback là 6,9 tháng; cả hai vượt ngưỡng 3x và dưới 12 tháng mà bài lab yêu cầu. Tôi tính LTV trên gross profit, không dùng doanh thu thuần.
+TAM 10.000 điểm bán ô tô tại Đông Nam Á là giả định phục vụ bài lab và nằm ở cận dưới của dải đề bài. VinFast là thị trường vào đầu tiên, với mốc tham chiếu 394 showroom toàn cầu tại ngày 30/06/2025. Adoption Base 0,3% tương đương khoảng 30 điểm bán mới mỗi tháng; Optimistic là 0,5% và Pessimistic là 0,1%. CAC Base 45 triệu đồng bao gồm demo, tích hợp và hỗ trợ ban đầu. Với gross margin 61,9%, LTV/CAC đạt 4,81x và CAC payback là 6,9 tháng. Tôi tính LTV từ lợi nhuận gộp sau COGS, không lấy doanh thu thuần nhân với thời gian sử dụng.
 
-Pessimistic không sao chép Base: ARPU giảm còn 8 triệu, adoption giảm từ 3,0% xuống 0,8%, churn tăng đúng 1,5x và CAC cũng tăng 1,5x. Kịch bản này chỉ còn runway 12 tháng và NPV âm, nên Plan B được kích hoạt ngay: dừng rollout địa điểm mới, giới hạn usage trong gói, chuyển phần lớn request sang model rẻ hơn, chỉ giữ human QA cho trường hợp rủi ro và cắt chi phí vận hành không thiết yếu. Nếu cash position đi đúng đường Pessimistic trong ba tháng liên tiếp, nhóm phải chốt thêm ngân sách trước tháng 10 thay vì chờ tiền mặt gần cạn.
+Trong Pessimistic, ARPU giảm còn 8 triệu đồng, churn tăng từ 3% lên 4,5% và CAC tăng từ 45 lên 67,5 triệu đồng. LTV/CAC khi đó xuống dưới 1x và NPV âm, nên đây không phải kịch bản được làm đẹp. Với 10 tỷ đồng tiền mặt ban đầu, runway còn 14 tháng. Nếu kết quả thực tế bám kịch bản này trong ba tháng liên tiếp, nhóm sẽ dừng rollout mới, đặt giới hạn usage, chuyển tác vụ ít rủi ro sang model rẻ hơn, giữ human QA cho ca quan trọng và chốt phương án vốn trước khi runway xuống dưới 12 tháng.
 
 ## Nguồn và benchmark
 
@@ -57,11 +59,12 @@ Pessimistic không sao chép Base: ARPU giảm còn 8 triệu, adoption giảm t
 
 - [x] File Excel đúng tên `2A202601912_HuynhThiHaiChau_Day24.xlsx`.
 - [x] Tất cả ô màu vàng ở Tab 1 đã có dữ liệu cho ba kịch bản.
+- [x] Adoption của ba kịch bản nằm trong dải 0,1%–0,5%/tháng; TAM là 10.000 khách hàng.
 - [x] AI hidden costs lớn hơn 30% API cost.
 - [x] Pessimistic Churn và CAC đều đạt shock 1,5x Base.
 - [x] Base LTV/CAC > 3 và CAC Payback < 12 tháng.
 - [x] Base NPV > 0, IRR > WACC và project payback < 24 tháng.
-- [x] Pessimistic runway đạt 12 tháng.
+- [x] Pessimistic runway đạt 14 tháng, cao hơn ngưỡng 12 tháng.
 - [x] Có bảng sensitivity ARPU × Churn và khối kiểm tra `MODEL STATUS: PASS`.
 
 ## AI Support Disclosure
