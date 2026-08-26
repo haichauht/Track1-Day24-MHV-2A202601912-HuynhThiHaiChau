@@ -63,14 +63,15 @@ Kịch bản Pessimistic có NPV âm và kết luận `NO-GO`; đây là tín hi
 
 ## Decision Note
 
-Tôi không thu tiền trực tiếp từ người đặt lịch lái thử. Showroom hoặc đại lý là bên trả phí, còn khách mua xe dùng ViVi miễn phí. Gói Base gồm 9 triệu đồng phí nền tảng mỗi tháng và khoảng 1,5 triệu đồng usage, nên ARPU là 10,5 triệu đồng/showroom/tháng. Tôi chọn cách thu hybrid vì showroom dễ dự toán phần phí cố định, còn phần usage giúp nhóm không phải gánh toàn bộ chi phí khi số cuộc hội thoại tăng mạnh.
+ViVi dùng hybrid B2B: 9 triệu đồng phí nền tảng/showroom/tháng cộng 1,5 triệu đồng usage, nên ARPU Base là 10,5 triệu đồng. Cách thu này bám logic [Intercom](https://www.intercom.com/ai-chatbot): gói nền tảng từ 29 USD/seat/tháng và Fin AI Agent thêm 0,99 USD cho mỗi outcome. Với ViVi, phí nền tảng chi trả cho tích hợp dữ liệu xe, lịch lái thử và dashboard; phần usage hấp thụ biến động hội thoại. CAC Base 45 triệu đồng được ước tính bottom-up từ demo, tích hợp, onboarding và hỗ trợ bán hàng B2B. Kết quả payback 6,9 tháng, thấp hơn mốc 12 tháng dành cho SMB theo Bessemer.
 
-TAM 10.000 điểm bán ô tô tại Đông Nam Á là giả định phục vụ bài lab và nằm ở cận dưới của dải đề bài. VinFast là thị trường vào đầu tiên, với mốc tham chiếu 394 showroom toàn cầu tại ngày 30/06/2025. Adoption Base 0,3% tương đương khoảng 30 điểm bán mới mỗi tháng; Optimistic là 0,5% và Pessimistic là 0,1%. CAC Base 45 triệu đồng bao gồm demo, tích hợp và hỗ trợ ban đầu. Với gross margin 61,9%, LTV/CAC đạt 4,81x và CAC payback là 6,9 tháng. Tôi tính LTV từ lợi nhuận gộp sau COGS, không lấy doanh thu thuần nhân với thời gian sử dụng.
+Ngoài API 1,5 triệu và hạ tầng 1,2 triệu đồng/showroom/tháng, tôi dành 1,3 triệu đồng cho AI hidden costs, bằng 86,7% API cost. Mỗi tuần nhóm lấy mẫu lỗi và gắn nhãn lại intent; mỗi tháng cập nhật knowledge base; mỗi quý chạy regression test rồi chỉnh prompt hoặc retrain. PM giữ rubric, kỹ sư vận hành pipeline, còn sales ops kiểm tra thủ công các ca có giá, khuyến mại hoặc booking bất thường. Khoản này gắn với công việc cụ thể, không phải buffer chung.
 
-Trong Pessimistic, ARPU giảm còn 8 triệu đồng, churn tăng từ 3% lên 4,5% và CAC tăng từ 45 lên 67,5 triệu đồng. LTV/CAC khi đó xuống dưới 1x và NPV âm, nên đây không phải kịch bản được làm đẹp. Với 10 tỷ đồng tiền mặt ban đầu, runway còn 14 tháng. Nếu kết quả thực tế bám kịch bản này trong ba tháng liên tiếp, nhóm sẽ dừng rollout mới, đặt giới hạn usage, chuyển tác vụ ít rủi ro sang model rẻ hơn, giữ human QA cho ca quan trọng và chốt phương án vốn trước khi runway xuống dưới 12 tháng.
+Ở Base, gross margin là 61,9%, LTV/CAC đạt 4,81x, CAC payback là 6,9 tháng, NPV dương và dự án hoàn vốn ở tháng 18. Pessimistic hạ ARPU còn 8 triệu đồng, adoption còn 0,1%, churn lên 4,5% và CAC lên 67,5 triệu đồng; NPV khi đó âm. Với 10 tỷ đồng tiền mặt, runway vẫn đạt 14 tháng. Nếu kết quả thực tế bám kịch bản này ba tháng liên tiếp, nhóm sẽ dừng rollout mới, đặt trần usage, dùng model rẻ hơn cho tác vụ ít rủi ro, giữ human QA cho ca quan trọng và chốt vốn trước khi runway xuống dưới 12 tháng.
 
 ## Nguồn và benchmark
 
+- [Intercom — gói từ 29 USD/seat/tháng và Fin AI Agent 0,99 USD/outcome](https://www.intercom.com/ai-chatbot)
 - [VinFast Q2/2025 — 394 showrooms toàn cầu tại 30/06/2025](https://vinfastauto.com/vn_en/vinfast-reports-unaudited-second-quarter-2025-financial-results)
 - [Bessemer — CLTV/CAC từ 3x và CAC payback theo phân khúc](https://www.bvp.com/assets/uploads/2021/09/scaling-to-100-million-by-mary-d-onofrio.pdf)
 - [a16z — AI businesses có cloud, data labeling và human-in-the-loop costs](https://a16z.com/the-new-business-of-ai-and-how-its-different-from-traditional-software/)
